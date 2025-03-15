@@ -1,0 +1,261 @@
+/* 
+ * BASIC RESET
+ * This removes default spacing and sizing that browsers add to elements
+ * Think of it as starting with a clean canvas
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+ * BODY STYLES
+ * The body is the main container of the entire webpage
+ * Here we set the font, background color, and text color
+ */
+body {
+    font-family: 'Space Mono', monospace; /* This sets the text font */
+    background-color: #4040FF; /* This is the bright blue background color */
+    color: #000; /* This makes the text color black */
+    line-height: 1.6; /* This adds some spacing between lines of text */
+    overflow-x: hidden; /* This prevents sideways scrolling if elements stick out */
+}
+
+/* 
+ * CONTAINER
+ * This is a wrapper that keeps our content centered and with nice margins
+ */
+.container {
+    max-width: 1200px; /* This stops the container from getting too wide */
+    margin: 0 auto; /* This centers the container (0 for top/bottom, auto for left/right) */
+    padding: 40px; /* This adds space inside the container */
+}
+
+/* 
+ * HEADER STYLES
+ * The header is the top section of our page with the title
+ */
+header {
+    text-align: center; /* This centers the text */
+    margin-bottom: 60px; /* This adds space below the header */
+    padding: 20px; /* This adds space inside the header */
+}
+
+/* 
+ * HEADING LEVEL 1
+ * This is the main title of our page
+ */
+h1 {
+    font-size: 64px; /* This makes the text very large */
+    letter-spacing: 2px; /* This adds space between each letter */
+    color: white; /* This makes the text white */
+}
+
+/* 
+ * IMAGE COLLAGE CONTAINER
+ * This is the section that holds all our collage elements
+ */
+.image-grid {
+    position: relative; /* This lets us place things exactly where we want inside */
+    height: 800px; /* This sets a fixed height for our collage area */
+    margin-bottom: 60px; /* This adds space below the collage */
+    perspective: 1000px; /* This creates a 3D effect for hover animations */
+}
+
+/* ===== COLLAGE IMAGES ===== */
+
+/* 
+ * BASE IMAGE STYLES
+ * These styles apply to all images in our collage
+ * 
+ * Selector: .collage-img
+ * This selects all elements with class="collage-img"
+ */
+.collage-img {
+    position: absolute; /* This lets us place images anywhere in the container */
+    border: 2px solid #000; /* Black border around each image */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* This adds a soft shadow for a 3D effect */
+    transition: transform 0.3s ease; /* This makes hover animations smooth */
+}
+
+/* 
+ * NTH-CHILD EXPLAINED
+ * 
+ * The nth-child selector lets us target specific elements based on their order.
+ * 
+ * In our HTML, we have 9 images in the container.
+ * 
+ * nth-child(1) targets the first image, nth-child(2) targets the second, and so on.
+ * 
+ * Think of it like: "Select the 1st child, but only if it has class='collage-img'"
+ */
+
+/* 
+ * FIRST ROW OF IMAGES
+ * These position the top row of our collage
+ */
+.collage-img:nth-child(1) { /* This is our first image */
+    width: 30%; /* Width as percentage of the container */
+    top: 5%; /* Position from the top */
+    left: 5%; /* Position from the left */
+    transform: rotate(-8deg); /* Slight tilt counter-clockwise */
+    z-index: 3; /* Layer 3 - higher numbers appear on top of lower numbers */
+}
+
+.collage-img:nth-child(2) { /* This is our second image */
+    width: 25%;
+    top: 10%;
+    left: 38%;
+    transform: rotate(5deg);
+    z-index: 2;
+}
+
+.collage-img:nth-child(3) { /* This is our third image */
+    width: 28%;
+    top: 2%;
+    right: 5%;
+    transform: rotate(-5deg);
+    z-index: 4; /* Layer 4 - will appear on top of the other images in this row */
+}
+
+/* 
+ * SECOND ROW OF IMAGES
+ * These position the middle row of our collage
+ */
+.collage-img:nth-child(4) { /* This is our fourth image */
+    width: 32%;
+    top: 35%;
+    left: 15%;
+    transform: rotate(7deg);
+    z-index: 1;
+}
+
+.collage-img:nth-child(5) { /* This is our fifth image */
+    width: 26%;
+    top: 30%;
+    left: 50%;
+    transform: rotate(-10deg);
+    z-index: 5; /* Layer 5 - highest of all, will appear on top of everything */
+}
+
+.collage-img:nth-child(6) { /* This is our sixth image */
+    width: 22%;
+    top: 40%;
+    right: 10%;
+    transform: rotate(12deg);
+    z-index: 2;
+}
+
+/* 
+ * THIRD ROW OF IMAGES
+ * These position the bottom row of our collage
+ */
+.collage-img:nth-child(7) { /* This is our seventh image */
+    width: 28%;
+    bottom: 5%; /* Position from the bottom instead of the top */
+    left: 8%;
+    transform: rotate(-6deg);
+    z-index: 3;
+}
+
+.collage-img:nth-child(8) { /* This is our eighth image */
+    width: 30%;
+    bottom: 10%;
+    left: 40%;
+    transform: rotate(8deg);
+    z-index: 2;
+}
+
+.collage-img:nth-child(9) { /* This is our ninth image */
+    width: 25%;
+    bottom: 15%;
+    right: 5%;
+    transform: rotate(-12deg);
+    z-index: 1;
+}
+
+/* 
+ * HOVER EFFECT
+ * This creates an interactive effect when you move your mouse over an image
+ * 
+ * Selector: .collage-img:hover
+ * This applies styles when you hover over elements with class="collage-img"
+ */
+.collage-img:hover {
+    transform: scale(1.05) translateZ(20px); /* Makes the image slightly bigger and "pop out" */
+    z-index: 10; /* Puts the hovered image on top of everything else */
+}
+
+/* 
+ * POEM SECTION
+ * Styles for the text section below the collage
+ */
+.poem {
+    background-color: rgba(255, 255, 255, 0.8); /* White background that's slightly see-through */
+    padding: 40px; /* Space inside the box */
+    margin-top: 40px; /* Space above the box */
+    border: 2px solid #000; /* Black border around the box */
+}
+
+.poem h2 {
+    font-size: 40px; /* Large text for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.poem p {
+    margin-bottom: 20px; /* Space below each paragraph */
+    font-size: 16px; /* Text size for paragraphs */
+}
+
+/* ===== MOBILE FRIENDLY DESIGN ===== */
+
+/* 
+ * MEDIA QUERY EXPLAINED
+ * 
+ * A media query lets us apply different styles based on the device.
+ * This one says: "Apply these styles only when the screen is 768 pixels wide or less"
+ * 
+ * This is how we make our design work well on phones and tablets.
+ */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px; /* Smaller title on small screens */
+    }
+    
+    .image-grid {
+        height: 1500px; /* Taller container for stacked images */
+    }
+    
+    /* 
+     * MOBILE IMAGE LAYOUT
+     * 
+     * The !important means "override any other styles"
+     * This makes all images the same width and centered on mobile
+     */
+    .collage-img {
+        width: 70% !important;
+        left: 15% !important;
+        right: auto !important;
+    }
+    
+    /* 
+     * STACKED IMAGES
+     * 
+     * On mobile, we stack the images vertically instead of overlapping them
+     * Each image is positioned at a specific distance from the top
+     */
+    .collage-img:nth-child(1) { top: 0; }
+    .collage-img:nth-child(2) { top: 150px; }
+    .collage-img:nth-child(3) { top: 300px; }
+    .collage-img:nth-child(4) { top: 450px; }
+    .collage-img:nth-child(5) { top: 600px; }
+    .collage-img:nth-child(6) { top: 750px; }
+    .collage-img:nth-child(7) { top: 900px; }
+    .collage-img:nth-child(8) { top: 1050px; }
+    .collage-img:nth-child(9) { top: 1200px; }
+    
+    .container {
+        padding: 20px; /* Less padding on mobile */
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        The HEAD section contains information about the webpage,
+        but nothing that shows up on the page itself.
+        
+        It's like the "behind the scenes" information.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web of My Dreams</title>
+    
+    <!-- 
+        LINK tags connect our HTML to other files:
+        - The first link connects to our CSS file (style.css)
+        - The other links connect to Google Fonts for our special text style
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 
+        The BODY contains everything you actually see on the webpage.
+        
+        Think of it as the "stage" where all the visible content appears.
+    -->
+    
+    <!-- 
+        DIV is a container element - it groups other elements together.
+        
+        This div has class="container", which connects it to the .container
+        styles in our CSS file.
+    -->
+    <div class="container">
+        
+        <!-- 
+            HEADER is a semantic element that typically contains the
+            top section of a webpage, like the title or navigation.
+        -->
+        <header>
+            <!-- 
+                H1 is a heading element - it's the most important title on the page.
+                
+                There are headings from H1 (most important) to H6 (least important).
+            -->
+            <h1>WEB OF MY DREAMS</h1>
+        </header>
+
+        <!-- 
+            MAIN is a semantic element that contains the main content of the page.
+        -->
+        <main>
+            <!-- 
+                SECTION is a semantic element that groups related content.
+                
+                This section has class="image-grid", which connects it to the
+                .image-grid styles in our CSS file.
+                
+                This is our collage section with images arranged in an overlapping pattern.
+            -->
+            <section class="image-grid">
+                <!-- 
+                    IMAGES
+                    
+                    These IMG elements display our pictures in the collage.
+                    
+                    Each image has:
+                    - src attribute: points to the image file location
+                    - alt attribute: describes the image for accessibility
+                    - class attribute: connects to CSS styles
+                    
+                    The order of these images matters! In our CSS, we use
+                    nth-child selectors to position each one differently.
+                -->
+                <img src="./img/1.png" alt="Image 1" class="collage-img">
+                <img src="./img/2.png" alt="Image 2" class="collage-img">
+                <img src="./img/3.png" alt="Image 3" class="collage-img">
+                <img src="./img/1.png" alt="Image 4" class="collage-img">
+                <img src="./img/2.png" alt="Image 5" class="collage-img">
+                <img src="./img/3.png" alt="Image 6" class="collage-img">
+                <img src="./img/1.png" alt="Image 7" class="collage-img">
+                <img src="./img/2.png" alt="Image 8" class="collage-img">
+                <img src="./img/3.png" alt="Image 9" class="collage-img">
+            </section>
+
+            <!-- 
+                POEM SECTION
+                
+                This section contains text content with a heading and paragraphs.
+                
+                It has class="poem", which connects it to the .poem styles in our CSS.
+            -->
+            <section class="poem">
+                <!-- H2 is a second-level heading, less important than H1 -->
+                <h2>Poem section</h2>
+                
+                <!-- P elements are paragraphs of text -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
